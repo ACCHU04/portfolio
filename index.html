@@ -94,19 +94,6 @@
   .crawl-track span{font:400 12px var(--ui);letter-spacing:.1em;text-transform:uppercase;color:#b5b5c2;white-space:nowrap}
   .crawl-track span::after{content:"◆";margin-left:26px;font-size:7px;color:var(--olive);vertical-align:middle}
 
-  /* ---------- hero availability card ---------- */
-  .avail{position:relative;z-index:3;width:min(900px,92vw);margin-top:26px;padding:16px 20px;border-radius:26px;
-    background:linear-gradient(90deg,rgba(30,90,30,.2),rgba(20,20,30,.55));border:1px solid rgba(110,224,110,.22);
-    display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:space-between}
-  .avail-row{display:flex;gap:26px;flex-wrap:wrap;flex:1 1 440px}
-  .av{display:flex;flex-direction:column;gap:5px;min-width:0}
-  .av em{font-style:normal;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#8f8f9c}
-  .av b{font-weight:600;font-size:14px;letter-spacing:.02em;color:#fff;white-space:nowrap}
-  .av.hot em{color:#bff5bf;display:inline-flex;align-items:center;gap:7px}
-  .av.hot em::before{content:"";width:7px;height:7px;border-radius:50%;background:#6ee06e;box-shadow:0 0 10px #6ee06e;
-    animation:blink 1.6s ease-in-out infinite}
-  .avail-cta{display:flex;gap:10px;flex:0 0 auto}
-
   /* ---------- shared ---------- */
   .glow{position:absolute;border-radius:50%;pointer-events:none;filter:blur(30px)}
   .title{font-family:var(--thin);font-weight:100;letter-spacing:.01em;line-height:1;text-align:center;position:relative;z-index:2}
@@ -136,7 +123,7 @@
   .otw:hover{background:rgba(30,90,30,.6)}
   .otw i{width:8px;height:8px;border-radius:50%;background:#6ee06e;box-shadow:0 0 10px #6ee06e;animation:blink 1.6s ease-in-out infinite}
   .role{font-family:var(--thin);font-weight:200;font-size:clamp(46px,8.6vw,124px);line-height:1;margin-top:4px;text-align:center;position:relative;z-index:1;white-space:nowrap}
-  .stage{position:relative;width:min(1000px,100%);height:clamp(440px,54vw,660px)}
+  .stage{position:relative;width:min(1000px,100%);height:clamp(440px,54vw,660px);margin-top:-70px}
   .arc{position:absolute;left:50%;transform:translateX(-50%);border-radius:50%;}
   .arc.a1{bottom:-45%;width:100%;aspect-ratio:1;background:radial-gradient(circle at 50% 35%,rgba(22,22,140,.9) 0%,rgba(14,14,90,.75) 30%,rgba(8,8,40,.6) 55%,rgba(0,0,0,0) 70%);border-top:1px solid rgba(90,90,220,.25)}
   .arc.a2{bottom:-40%;width:55%;aspect-ratio:1;background:radial-gradient(circle at 50% 40%,rgba(10,10,70,.9),rgba(4,4,30,.9) 60%);border-top:1px solid rgba(120,120,255,.2)}
@@ -330,10 +317,6 @@
     .tbar{padding:0 66px 0 12px;gap:10px}
     .tbar-lbl{font-size:10px;letter-spacing:.12em}
     .crawl-track{animation-duration:34s}
-    .avail{padding:14px 16px;gap:14px;margin-top:20px}
-    .avail-row{gap:14px;flex:1 1 100%}
-    .av b{font-size:13px;white-space:normal}
-    .avail-cta{flex:1 1 100%}
     .stage{margin-top:0}
     .resume{left:2%;top:auto;bottom:24%}
     .based{right:2%;top:10%}
@@ -411,22 +394,6 @@
   <div class="hello">Hello</div>
   <div class="im">I’m <span class="nm">Acchutha</span><a class="otw" href="#contact" title="Open to GenAI internships and entry-level AI/ML roles"><i></i>Open to internships</a></div>
   <h1 class="role">GenAI Engineer</h1>
-
-  <div class="avail reveal">
-    <div class="avail-row">
-      <div class="av hot"><em>Available</em><b>Open to GenAI internships and entry-level roles</b></div>
-      <div class="av"><em>Based</em><b>Bengaluru · Remote-friendly</b></div>
-      <div class="av"><em>Focus</em><b>Agentic RAG · Voice AI · Text-to-SQL</b></div>
-    </div>
-    <div class="avail-cta">
-      <a class="btn" href="mailto:acchuachutha004@gmail.com?subject=Opportunity%20for%20Acchutha%20K%20S&body=Hi%20Acchutha%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20role%20with%20you.%0A%0A">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>
-        EMAIL ME</a>
-      <a class="btn" href="Acchutha_KS_Resume.pdf" download>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 15v3a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-3"/></svg>
-        RÉSUMÉ</a>
-    </div>
-  </div>
 
   <div class="stage">
     <div class="arc a3"></div>
