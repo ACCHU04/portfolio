@@ -36,7 +36,7 @@
     --ui:'Inter', system-ui, sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;scroll-padding-top:64px}
   body{background:var(--bg);color:var(--ink);font-family:var(--ui);overflow-x:hidden;-webkit-font-smoothing:antialiased}
   a{color:inherit;text-decoration:none}
   section{position:relative}
@@ -52,9 +52,9 @@
   /* ---------- nav ---------- */
   nav{position:fixed;right:18px;top:18px;z-index:50}
   .nav-btn{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;cursor:pointer;padding:0;
-    background:rgba(28,28,34,.55);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+    background:#131318;border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
     transition:background .25s,border-color .25s}
-  .nav-btn:hover{border-color:rgba(255,255,255,.4);background:rgba(40,40,48,.65)}
+  .nav-btn:hover{border-color:rgba(255,255,255,.4);background:#1c1c24}
   .bars{width:20px;height:14px;position:relative;display:block}
   .bars i{position:absolute;left:0;width:100%;height:2px;border-radius:2px;background:#fff;
     transition:top .3s cubic-bezier(.2,.7,.2,1),transform .3s cubic-bezier(.2,.7,.2,1),opacity .2s}
@@ -80,6 +80,33 @@
   .nav-menu.open a:nth-child(5){transition-delay:.18s}
   .nav-menu.open a:nth-child(6){transition-delay:.22s}
 
+  /* ---------- top crawl strip ---------- */
+  .tbar{position:relative;z-index:48;height:44px;display:flex;align-items:center;gap:14px;padding:0 80px 0 20px;
+    background:linear-gradient(90deg,rgba(10,10,14,.94),rgba(17,17,23,.72));
+    border-bottom:1px solid rgba(255,255,255,.07)}
+  .tbar-lbl{flex:0 0 auto;display:inline-flex;align-items:center;gap:8px;font:600 11px var(--ui);letter-spacing:.16em;
+    text-transform:uppercase;color:#bff5bf;white-space:nowrap}
+  .tbar-lbl i{width:7px;height:7px;border-radius:50%;background:#6ee06e;box-shadow:0 0 10px #6ee06e;animation:blink 1.6s ease-in-out infinite}
+  .crawl{flex:1 1 auto;min-width:0;overflow:hidden;
+    mask-image:linear-gradient(90deg,#000 86%,transparent);-webkit-mask-image:linear-gradient(90deg,#000 86%,transparent)}
+  .crawl-track{display:flex;gap:26px;width:max-content;padding-left:26px;animation:slide 46s linear infinite}
+  .crawl:hover .crawl-track{animation-play-state:paused}
+  .crawl-track span{font:400 12px var(--ui);letter-spacing:.1em;text-transform:uppercase;color:#b5b5c2;white-space:nowrap}
+  .crawl-track span::after{content:"◆";margin-left:26px;font-size:7px;color:var(--olive);vertical-align:middle}
+
+  /* ---------- hero availability card ---------- */
+  .avail{position:relative;z-index:3;width:min(900px,92vw);margin-top:26px;padding:16px 20px;border-radius:26px;
+    background:linear-gradient(90deg,rgba(30,90,30,.2),rgba(20,20,30,.55));border:1px solid rgba(110,224,110,.22);
+    display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:space-between}
+  .avail-row{display:flex;gap:26px;flex-wrap:wrap;flex:1 1 440px}
+  .av{display:flex;flex-direction:column;gap:5px;min-width:0}
+  .av em{font-style:normal;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#8f8f9c}
+  .av b{font-weight:600;font-size:14px;letter-spacing:.02em;color:#fff;white-space:nowrap}
+  .av.hot em{color:#bff5bf;display:inline-flex;align-items:center;gap:7px}
+  .av.hot em::before{content:"";width:7px;height:7px;border-radius:50%;background:#6ee06e;box-shadow:0 0 10px #6ee06e;
+    animation:blink 1.6s ease-in-out infinite}
+  .avail-cta{display:flex;gap:10px;flex:0 0 auto}
+
   /* ---------- shared ---------- */
   .glow{position:absolute;border-radius:50%;pointer-events:none;filter:blur(30px)}
   .title{font-family:var(--thin);font-weight:100;letter-spacing:.01em;line-height:1;text-align:center;position:relative;z-index:2}
@@ -99,7 +126,7 @@
   .reveal.in{opacity:1;transform:none}
 
   /* ---------- hero ---------- */
-  #hero{min-height:100vh;padding:120px 20px 60px;display:flex;flex-direction:column;align-items:center;overflow:hidden}
+  #hero{min-height:100vh;padding:64px 20px 60px;display:flex;flex-direction:column;align-items:center;overflow:hidden}
   .hello{font-weight:600;font-size:clamp(18px,2.2vw,32px);letter-spacing:.12em;padding:.35em 1em;border-radius:999px;
     border:1.5px solid rgba(255,255,255,.75);background:#1b1b1d;position:relative;z-index:3}
   .im{font-family:var(--thin);font-weight:200;font-size:clamp(40px,5.6vw,80px);margin-top:18px;display:flex;align-items:center;gap:.25em;z-index:3;position:relative}
@@ -109,7 +136,7 @@
   .otw:hover{background:rgba(30,90,30,.6)}
   .otw i{width:8px;height:8px;border-radius:50%;background:#6ee06e;box-shadow:0 0 10px #6ee06e;animation:blink 1.6s ease-in-out infinite}
   .role{font-family:var(--thin);font-weight:200;font-size:clamp(46px,8.6vw,124px);line-height:1;margin-top:4px;text-align:center;position:relative;z-index:1;white-space:nowrap}
-  .stage{position:relative;width:min(1000px,100%);height:clamp(440px,54vw,660px);margin-top:-70px}
+  .stage{position:relative;width:min(1000px,100%);height:clamp(440px,54vw,660px)}
   .arc{position:absolute;left:50%;transform:translateX(-50%);border-radius:50%;}
   .arc.a1{bottom:-45%;width:100%;aspect-ratio:1;background:radial-gradient(circle at 50% 35%,rgba(22,22,140,.9) 0%,rgba(14,14,90,.75) 30%,rgba(8,8,40,.6) 55%,rgba(0,0,0,0) 70%);border-top:1px solid rgba(90,90,220,.25)}
   .arc.a2{bottom:-40%;width:55%;aspect-ratio:1;background:radial-gradient(circle at 50% 40%,rgba(10,10,70,.9),rgba(4,4,30,.9) 60%);border-top:1px solid rgba(120,120,255,.2)}
@@ -299,7 +326,14 @@
     nav{right:12px;top:14px}
     .nav-btn{width:46px;height:46px}
     .nav-menu a{padding:8px 12px;font-size:12px;letter-spacing:.05em}
-    #hero{padding-top:80px}
+    #hero{padding-top:56px}
+    .tbar{padding:0 66px 0 12px;gap:10px}
+    .tbar-lbl{font-size:10px;letter-spacing:.12em}
+    .crawl-track{animation-duration:34s}
+    .avail{padding:14px 16px;gap:14px;margin-top:20px}
+    .avail-row{gap:14px;flex:1 1 100%}
+    .av b{font-size:13px;white-space:normal}
+    .avail-cta{flex:1 1 100%}
     .stage{margin-top:0}
     .resume{left:2%;top:auto;bottom:24%}
     .based{right:2%;top:10%}
@@ -365,12 +399,34 @@
   </div>
 </nav>
 
+<!-- ================= TOP CRAWL ================= -->
+<div class="tbar">
+  <span class="tbar-lbl"><i></i>Open for internships</span>
+  <div class="crawl"><div class="crawl-track" id="crawlTrack"></div></div>
+</div>
+
 <!-- ================= HERO ================= -->
 <section id="hero">
   <div class="glow" style="left:-160px;top:-120px;width:420px;height:520px;background:radial-gradient(circle,rgba(120,10,20,.45),transparent 65%)"></div>
   <div class="hello">Hello</div>
-  <div class="im">I’m <span class="nm">Acchutha</span><a class="otw" href="#contact" title="Open to entry-level AI/ML and GenAI roles"><i></i>Open to work</a></div>
+  <div class="im">I’m <span class="nm">Acchutha</span><a class="otw" href="#contact" title="Open to GenAI internships and entry-level AI/ML roles"><i></i>Open to internships</a></div>
   <h1 class="role">GenAI Engineer</h1>
+
+  <div class="avail reveal">
+    <div class="avail-row">
+      <div class="av hot"><em>Available</em><b>Open to GenAI internships and entry-level roles</b></div>
+      <div class="av"><em>Based</em><b>Bengaluru · Remote-friendly</b></div>
+      <div class="av"><em>Focus</em><b>Agentic RAG · Voice AI · Text-to-SQL</b></div>
+    </div>
+    <div class="avail-cta">
+      <a class="btn" href="mailto:acchuachutha004@gmail.com?subject=Opportunity%20for%20Acchutha%20K%20S&body=Hi%20Acchutha%2C%0A%0AI%20came%20across%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20role%20with%20you.%0A%0A">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5z"/></svg>
+        EMAIL ME</a>
+      <a class="btn" href="Acchutha_KS_Resume.pdf" download>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5"/><path d="M4 15v3a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3v-3"/></svg>
+        RÉSUMÉ</a>
+    </div>
+  </div>
 
   <div class="stage">
     <div class="arc a3"></div>
@@ -390,7 +446,7 @@
     <div class="namepill">ACCHUTHA K S</div>
   </div>
 
-  <p class="bio reveal">AI / GenAI Engineer and Full-Stack Developer, currently pursuing an MCA in Data Science at Chanakya University, Bengaluru. I design and ship end-to-end AI products — agentic RAG systems, real-time voice agents and text-to-SQL analytics — on a production stack of FastAPI, React/Next.js and PostgreSQL. I focus on building reliable, well-evaluated systems that move cleanly from prototype to a deployed, user-facing product. Currently seeking entry-level AI/ML and GenAI engineering roles.</p>
+  <p class="bio reveal">AI / GenAI Engineer and Full-Stack Developer, currently pursuing an MCA in Data Science at Chanakya University, Bengaluru. I design and ship end-to-end AI products — agentic RAG systems, real-time voice agents and text-to-SQL analytics — on a production stack of FastAPI, React/Next.js and PostgreSQL. I focus on building reliable, well-evaluated systems that move cleanly from prototype to a deployed, user-facing product. Currently open to GenAI internships and entry-level AI/ML engineering roles.</p>
 </section>
 
 <!-- ================= I BUILD ================= -->
@@ -684,6 +740,17 @@ const HIGHLIGHTS = [
   {e:'Problem Solving', b:'50+ LeetCode problems', s:'Arrays, linked lists, sliding window, DP'},
 ];
 
+const TICKER = [
+  'Open to GenAI internships and entry-level roles',
+  'Agentic RAG · LangGraph · ChromaDB',
+  'Real-time voice agents · Deepgram · Cartesia',
+  'Text-to-SQL analytics · Gemini · FastAPI',
+  'React · Next.js · PostgreSQL · Docker',
+  'MCA Data Science · Chanakya University',
+  'Karnataka Police Datathon 2026 · Built Crime-AI',
+  'Bengaluru · Open to remote',
+];
+
 /* ---------- intro ---------- */
 window.addEventListener('load',()=>setTimeout(()=>document.getElementById('intro').classList.add('gone'),1300));
 setTimeout(()=>document.getElementById('intro').classList.add('gone'),3500);
@@ -834,6 +901,11 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 const track=document.getElementById('track');
 const hlHTML=HIGHLIGHTS.map(h=>`<div class="hl"><em>${h.e}</em><b>${h.b}</b><span>${h.s}</span></div>`).join('');
 track.innerHTML=hlHTML+hlHTML;
+
+/* ---------- top crawl track ---------- */
+const crawlTrack=document.getElementById('crawlTrack');
+const tickHTML=TICKER.map(t=>`<span>${t}</span>`).join('');
+crawlTrack.innerHTML=tickHTML+tickHTML;
 
 /* ---------- silk wave canvas ---------- */
 const cv=document.getElementById('silk'),cx=cv.getContext('2d');
