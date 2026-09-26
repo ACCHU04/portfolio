@@ -50,7 +50,7 @@
   @keyframes breathe{0%,100%{transform:scale(.92);opacity:.8}50%{transform:scale(1.08);opacity:1}}
 
   /* ---------- nav ---------- */
-  nav{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:50}
+  nav{position:fixed;right:18px;top:18px;z-index:50}
   .nav-btn{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;cursor:pointer;padding:0;
     background:rgba(28,28,34,.55);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
     transition:background .25s,border-color .25s}
@@ -296,9 +296,8 @@
 
   /* ---------- responsive ---------- */
   @media (max-width:860px){
-    nav{top:auto;right:12px;bottom:14px;transform:none}
+    nav{right:12px;top:14px}
     .nav-btn{width:46px;height:46px}
-    .nav-menu{top:auto;bottom:calc(100% + 10px)}
     .nav-menu a{padding:8px 12px;font-size:12px;letter-spacing:.05em}
     #hero{padding-top:80px}
     .stage{margin-top:0}
